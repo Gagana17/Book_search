@@ -1,37 +1,23 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/layout/Layout/Layout";
+import { Home } from "./pages/Home/Home";
+import { SearchResults } from "./pages/SearchResults/SearchResults";
+import { BookDetail } from "./pages/BookDetail/BookDetail";
+import AboutPage from "./pages/About/About";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
-  const [query, setQuery] = useState("");
-
-  const searchBooks = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:5000/api/books?q=${query}`
-      );
-      setBooks(response.data);
-    } catch (error) {
-      console.error("Error fetching books", error);
-    }
-  };
-
   return (
-    <div>
-      <h1>Book Search App</h1>
-      <input
-        type="text"
-        placeholder="Search for books"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={searchBooks}>Search</button>
-      <ul>
-        {books.map((book) => (
-          <li key={book.id}>{book.volumeInfo.title}</li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="/book/:id" element={<BookDetail />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
