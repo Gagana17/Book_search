@@ -1,22 +1,30 @@
-# **Book Discovery Web App**
+# **Book Search Application**
 
-A modern and responsive web application for discovering and exploring books. This app uses React and Tailwind CSS to deliver a seamless user experience.
+A full-stack web application for discovering and exploring books using the Google Books API. This app features a clean, modular structure for both frontend and backend development, ensuring scalability and maintainability.
 
 ---
 
 ## **Features**
 
-- **Discover Books**: Browse books with an intuitive interface.  
-- **Search Functionality**: Advanced search for books by title, author, or genre.  
-- **Book Details**: View detailed information about each book.  
-- **Reusable Components**: Modular design with reusable UI components for scalability.  
-- **Responsive Design**: Optimized for all screen sizes using Tailwind CSS.  
+- **Search for Books**: Search for books by title, author, or keywords.  
+- **View Book Details**: View detailed information about selected books.  
+
+- **API Integration**: Fetch book data using the Google Books API.  
+- **Responsive Design**: Fully responsive UI powered by Tailwind CSS.  
 
 ---
 
 ## **Tech Stack**
 
-- **Frontend Framework**: React.js  
+### **Frontend**
+- **Framework**: React.js  
 - **Styling**: Tailwind CSS  
 
----
+### **Backend**
+- **Environment**: Node.js  
+- **Framework**: Express.js  
+- **API Integration**: Google Books API  
+
+
+
+
